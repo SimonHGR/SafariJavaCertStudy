@@ -1,0 +1,67 @@
+Resources
+---------
+
+Pre-recorded Java 17 Certification Study Guide covering all topics:
+ - https://learning.oreilly.com/videos/java-se-17/9780138194796/
+
+Connect with me:
+- LinkedIn: https://www.linkedin.com/in/simonhgroberts/
+- YouTube:  https://www.youtube.com/@DancingCloudServices
+- Email:    simon@dancingcloudservices.com
+
+Sign up for Heinz Kabutz's monthly "favorite courses on O'Reilly" email:
+  https://javaspecialists.eu/courses/oreilly/
+(You might want to join his "Java Specialists" email newsletter too!)
+
+Quiztool:
+ - https://dancingcloudservices.net/quiz-tool/
+GitHub repo (NOTE: this will vanish in two weeks, clone/download before then!)
+ - https://github.com/SimonHGR/SafariJavaCertStudy
+
+Pre-recorded Certification videos
+Java 17 Certification Study Guide (as above):
+ - https://learning.oreilly.com/videos/java-se-17/9780138194796/
+Java 11 Certification Study Guide:
+ - https://learning.oreilly.com/videos/java-se-11/9780137586875/
+OCA Java 8 (more detailed on basics, and all relevant for 11 & 17!)
+ - https://learning.oreilly.com/videos/oca-java-se/9780134427201
+
+More Java videos relevant for Java 8, 11, and 17 certification:
+ - Functional programming with Java:
+   https://learning.oreilly.com/videos/functional-programming-for/9780134778235
+ - Java Collections:
+   https://learning.oreilly.com/videos/modern-java-collections/9780134663524
+ - Java Programming Essentials:
+   https://learning.oreilly.com/videos/java-programming-essentials/9780137475438/
+ - Core Java Data Types:
+   https://learning.oreilly.com/videos/core-java-data/9780137368624/
+ - Up and Running with the Java Platform Module System
+   (Note, this is *not relevant* to Java 8 certification):
+   https://learning.oreilly.com/videos/up-and-running/9780137475216/
+ - And other live classes
+
+Oracle Java Magazine
+ - https://blogs.oracle.com/javamagazine/search.html?q=Quiz+Yourself
+
+Java Ranch / Code Ranch
+ - Forum site that's actually helpful to learners
+ - Created for, and still heavily focused on, certification
+ - Lots of resources, book reviews, sample quizzes (caution!)
+ - JavaRanch.com
+ - Or direct to the Certification FAQ
+   https://www.coderanch.com/wiki/746889/certification/OCP-FAQ
+
+Java 17 API documentation:
+ - https://docs.oracle.com/en/java/javase/17/docs/api/index.html
+
+Java tutorial (Java 8 only, sadly, but excellent for helping understand
+   core material up to and including lambdas and streams.)
+ - https://docs.oracle.com/javase/tutorial/
+
+Contact me directly at simon@dancingcloudservices.com if your 
+organization might be interested in customized training or course
+development. I work in Java, Scala, JavaScript, Python, Go, and
+address OO design, functional design, and software architecture 
+topics, and am happy to deliver training either onsite or web-based,
+or to build courses and training material in video or other formats.
+
