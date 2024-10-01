@@ -195,3 +195,53 @@ C)
  public boolean equals(Object o) {
    return o.getClass() == P.class && o instanceof P other && this.x == other.x;
  }
+
+Q) Which print true?
+Iterable<String> is = List.of("a", "b", "c");
+Object obj = is;
+
+A) System.out.println(is instanceof List);
+B) System.out.println(obj instanceof List l && l.size() > 2);
+C) System.out.println(obj instanceof List<String> ls);
+D) System.out.println(is instanceof Collection<? extends CharSequence> cs);
+E) System.out.println(is instanceof List<String> ls || ls.size() > 2);
+
+Q) Given:
+  class Base {
+    void doBaseStuff() { System.out.println("doBaseStuff"); }
+  }
+
+  class Sub extends Base {
+    void doBaseStuff() { System.out.println("doSubStuff"); }
+    void doOtherStuff() { System.out.println("doOtherStuff"); }
+  }
+and:
+    Base b = new Sub();
+    ((Runnable) b).run();
+
+What is the result?
+A) doSubStuff
+B) doOtherStuff
+C) doBaseStuff
+D) Exception at runtime
+E) Compilation failure
+
+Q) Given:
+public class OverloadResolution1 {
+  void doStuff(int x, int y) {}         // Method A
+  void doStuff(int x, long y) {}        // Method B
+  void doStuff(long x, int y) {}        // Method C
+  void doStuff(int ... x) {}            // Method D
+  void doStuff(Integer x, Integer y) {} // Method E
+
+  void tryStuff() {
+    doStuff(1, 2);
+  }
+}
+
+What happens if method A is deleted?
+A) Method B is invoked
+B) Method C is invoked
+C) Method D is invoked
+D) Method E is invoked
+E) Compilation fails
