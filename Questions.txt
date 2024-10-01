@@ -70,7 +70,7 @@ L)
   } catch (var anException) {}
 
 Q) Which creates the output:
-Xhello
+X"hello"
   javaX
 
 String A = """
@@ -104,3 +104,94 @@ String F = """
 var message = "X" + F + "X";
 
 out.println(message);
+
+Q)Given:
+    int x = -1;
+    System.out.println(x & 5);
+
+What is the result?
+A) Compilation fails
+B) Exception at runtime
+C) -1
+D) 0x00000005
+E) 5
+
+Q) Given:
+  private static int count = 22;
+  public static boolean getValue() {
+    count++;
+    return true;
+  }
+
+and:
+    boolean b1 = false;
+    if (!b1 & getValue()) {
+      System.out.println(count);
+    } else {
+      System.out.println("No " + count);
+    }
+
+What is the result:
+A) Compilation fails
+B) No 22
+C) No 23
+D) 22
+E) 23
+
+Q) Given:
+class X { // separately compiled
+  static String h = "Hel" + "lo";
+}
+
+and:
+  String s1 = "Hello";
+  String s2 = new StringBuilder("Hello").toString();
+  String s3 = s2.intern();
+
+Which are true?
+  A) s1 == s2
+  B) s2 == s3
+  C) s1 == s3
+  D) X.h == s1
+  E) None of the above
+
+Q) Given:
+class P {
+  protected int x;
+  public P(int x) { this.x = x; }
+  // line n1
+}
+
+class Q extends P {
+  private int y;
+  public Q(int x, int y) { super(x); this.y = y; }
+  public boolean equals(Object obj) {
+    return obj instanceof Q other && super.equals(obj) && other.y == this.y;
+  }
+}
+and:
+    P p = new P(10);
+    P p2 = new P(10);
+    P q = new Q(10, 10);
+    P q2 = new Q(10, 12);
+    out.print(p.equals(p2) + " ");
+    out.print(p.equals(q) + " ");
+    out.print(p.equals(q2) + " ");
+    out.print(q.equals(p) + " ");
+    out.println(q.equals(q2));
+which, inserted at line n1, causes the output true true true true true?
+
+A)
+ public boolean equals(Object o) {
+   return o instanceof P other && this.x == other.x;
+ }
+
+B)
+ public boolean equals(P other) {
+   return this.x == other.x;
+ }
+
+C)
+ public boolean equals(Object o) {
+   return o.getClass() == P.class && o instanceof P other && this.x == other.x;
+ }
