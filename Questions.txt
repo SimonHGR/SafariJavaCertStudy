@@ -1,0 +1,70 @@
+Q) Given:
+   var b = (byte)126;
+   outer:
+   for (var n = 1000; n < 1002; n++) {
+     for (var j = 4; j >= 0; j--, b++) {
+       if (j < 3) break;
+       else if (n == 1001) continue outer;
+       b++;
+     }
+   }
+   System.out.printf("b = %d\n", b);
+
+
+What is the output
+A) b = 129
+B) b = 130
+C) b = -126
+D) b = -128
+E) an exception is thrown
+
+Q) Which are legal:
+
+A)
+class A {
+    var x = 99;
+ }
+
+B)
+void doStuffB(var x) { }
+
+C)
+void doStuffC() {
+     var x;
+     x = 100;
+ }
+
+D)
+void doStuffD() {
+   var x = 100;
+ }
+
+E)
+void doStuffE() {
+    var x = null;
+ }
+
+ void xxx() throws Throwable {
+F)
+  var [] f = { 1,2,3 };
+
+G)
+  var g = new int[]{ 1,2,3 };
+
+H)
+    var h1 = 10, h2 = 100;
+
+I)
+  var i = true ? "99" : 99;
+
+J)
+  var var = "var";
+
+  Iterable<String> ki = null;
+K)
+  for (var k : ki) {}
+
+L)
+  try {
+     if (Math.random() > 0.5) throw new SQLException();
+  } catch (var anException) {}
