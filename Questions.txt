@@ -321,3 +321,34 @@ D) If main.txt is readable, its contents are shown,
    but if not, the contents of backup.txt are shown
 E) If main.txt is readable, its contents are shown
    but if not, the program exits with an unhandled exception
+
+Q) Given
+class AC3 implements AutoCloseable {
+  @Override
+  public void close() throws Exception {
+    System.out.println("Closing");
+    throw new SQLException();
+  }
+}
+And:
+  public static void main(String[] args) throws Throwable {
+    try (
+        var one = new AC3();
+        var two = new AC3();
+        ){
+    }
+  }
+What is the result (choose only one)?
+A) Compilation fails
+
+B) Closing
+   Closing
+
+C) Closing
+   SQLException halts the program
+
+D) Closing
+   Closing
+   SQLException halts the program
+
+E) No output, SQLException halts the program
