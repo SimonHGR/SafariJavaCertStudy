@@ -348,3 +348,49 @@ D) Closing
    Closing
    SQLException halts the program
 E) No output, SQLException halts the program
+
+Q) Given:
+enum Day {
+  MONDAY(1), TUESDAY;
+// line n1
+}
+and:
+System.out.println(Day.MONDAY)
+
+Which is/are true?
+A) The code compiles as is
+B) If the following is added at line n1, the code compiles:
+   public Day(int d) {}
+C) If the following is added at line n1, the code compiles:
+   Day(int d) {}
+D) If the following is added at line n1, the code compiles:
+   Day(int d) {} Day() {}
+E) If the MONDAY(1), is changed to MONDAY, the code compiles:
+
+Q) Given:
+interface GameDescriptor {
+  String gameType();
+}
+abstract class GD {
+  public abstract String gameType();
+}
+enum Suit {
+  HEARTS, DIAMONDS, CLUBS, SPADES;
+// line n1
+  boolean isTrumps() { return this == HEARTS; }
+}
+Which is/are true?
+A) isTrumps is implicitly static
+B) compilation fails, but marking isTrumps static corrects the problem
+C) isTrumps can be marked final
+D) if it's necessary to prevent isTrumps being overridden,
+   it should be marked final
+E) this can be added at line n1:
+   private static Suit trumps = HEARTS;
+F) Suit can be modified to implement the GameDescriptor interface
+   if this code is added at line n1:
+   public String gameType() { return "Cards"; }
+G) Suit can be modified to extend the GD class if this code is
+   added at line n1:
+   public String gameType() { return "Cards"; }
+H) none of the above
