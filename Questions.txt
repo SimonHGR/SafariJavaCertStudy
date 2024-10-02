@@ -280,6 +280,7 @@ out.println(switch(x) {
     yield var;
   }
   default: "";
+  });
 
 E)
 out.println(switch(x) {
@@ -297,3 +298,26 @@ G)
 out.println(switch(x) {
   case X.HELLO, X.GOODBYE -> { yield "Hello"; }
 });
+
+Q)
+Given:
+    try (
+        var fr = new FileReader("main.txt"); // line n1
+        var br = new BufferedReader(fr);     // line n2
+        ) {
+          if (!br.ready()) {
+            br = new BufferedReader(new FileReader("backup.txt")); // line n3
+          }
+          String line;
+          while ((line = br.readLine()) != null)
+            System.out.println(">> " + line);
+        }
+
+What is the result?
+A) Compilation fails at line n1
+B) Compilation fails at line n2
+C) Compilation fails at line n3
+D) If main.txt is readable, its contents are shown,
+   but if not, the contents of backup.txt are shown
+E) If main.txt is readable, its contents are shown
+   but if not, the program exits with an unhandled exception
