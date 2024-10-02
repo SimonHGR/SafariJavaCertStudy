@@ -340,15 +340,11 @@ And:
   }
 What is the result (choose only one)?
 A) Compilation fails
-
 B) Closing
    Closing
-
 C) Closing
    SQLException halts the program
-
 D) Closing
    Closing
    SQLException halts the program
-
 E) No output, SQLException halts the program
