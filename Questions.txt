@@ -394,3 +394,85 @@ G) Suit can be modified to extend the GD class if this code is
    added at line n1:
    public String gameType() { return "Cards"; }
 H) none of the above
+
+Q) Given:
+class OuterP {
+  class InnerP1 {
+    private void doStuff() {
+      System.out.println("InnerP1.doStuff()");
+    }
+  }
+  class InnerP2 extends InnerP1 {
+    public void doStuff() {
+      System.out.println("InnerP2.doStuff()");
+    }
+  }
+  public static void main(String[] args) {
+    OuterP.InnerP1 op = new OuterP().new InnerP2();
+    op.doStuff();
+  }
+}
+
+What is the result?
+A) Does not compile
+B) Exception at runtime
+C) InnerP1.doStuff()
+D) InnerP2.doStuff()
+
+Q)
+Given
+class Outer {
+  class Inner{
+  }
+}
+
+Which create an instance of Inner?
+A) new Inner();
+B) new Outer.Inner();
+C) Outer ou = new Outer(); new ou.Inner(); // NO!! ou.new Inner() would work...
+D) new Outer().new Inner();
+E) new Outer() { new Inner(); }
+
+Q) Given:
+class Outer2 {
+  class Inner2 {
+// line n1
+  }
+}
+
+Which can be added individually at line n1
+A) Inner2(Outer2 Outer2.this){}
+B) Inner2(Outer2 that){}
+C) Inner2(Outer2 this){}
+D) Inner2(Inner2 this) {}
+E) void doStuff(Inner2 this) {}
+
+Q) Given:
+record Customer(String name, int id) {
+  // line n1
+}
+Which are valid at line n1?
+A)  Customer(String name, int id) {
+      this.name = "Mx. " + name;
+    }
+B)  Customer {
+      this.name = name;
+      this.id = id;
+    }
+C)  Customer {
+      if (name == null || name.length() == 0 || id < 1)
+        throw new IllegalArgumentException("Bad Customer values");
+      name = "Mr/Mrs/Ms " + name;
+    }
+D)  static {}
+E)  {}
+
+
+
+
+
+
+
+
+
+
