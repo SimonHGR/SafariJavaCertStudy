@@ -447,26 +447,68 @@ C) Inner2(Outer2 this){}
 D) Inner2(Inner2 this) {}
 E) void doStuff(Inner2 this) {}
 
-Q) Given:
-record Customer(String name, int id) {
-  // line n1
-}
-Which are valid at line n1?
-A)  Customer(String name, int id) {
-      this.name = "Mx. " + name;
-    }
-B)  Customer {
-      this.name = name;
-      this.id = id;
-    }
-C)  Customer {
-      if (name == null || name.length() == 0 || id < 1)
-        throw new IllegalArgumentException("Bad Customer values");
-      name = "Mr/Mrs/Ms " + name;
-    }
-D)  static {}
-E)  {}
+Q) Which declaration allows this code:
+    Person p = new Person("Siobhan", "On the hill");
+    System.out.println(p);
 
+to result in:
+Person[name=Siobhan, address=On the hill]
+
+A)
+record PersonA {
+  String name, address;
+}
+
+B)
+record Person(private String name, private String address) {
+  Person {
+    if (name == null || address == null) {
+      throw new IllegalArgumentException();
+    }
+    this.name = name;
+    this.address = address;
+  }
+}
+
+C)
+record Person(String name, String address) {
+  private String name;
+  private String address;
+  Person {
+    if (name == null || address == null) {
+      throw new IllegalArgumentException();
+    }
+  }
+}
+
+D)
+record Person(String name, String address) {
+  Person {
+    if (name == null || address == null) {
+      throw new IllegalArgumentException();
+    }
+  }
+}
+
+E)
+record Person(String name, String address) {
+  Person(String name, String address) {
+    if (name == null || address == null) {
+      throw new IllegalArgumentException();
+    }
+  }
+}
+
+F)
+record Person(String name, String address) {
+  Person(String name, String address) {
+    if (name == null || address == null) {
+      throw new IllegalArgumentException();
+    }
+    this.name = name;
+    this.address = address;
+  }
+}
 
 
 

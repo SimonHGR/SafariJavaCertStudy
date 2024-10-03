@@ -5,8 +5,10 @@ import java.lang.annotation.Target;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
-//@Target(ElementType.PARAMETER)
-//@interface NotNull {}
+import static java.lang.annotation.ElementType.*;
+
+@Target(TYPE_USE)
+@interface NotNull {}
 
 class Outer2 {
   class Inner2 {
@@ -17,7 +19,7 @@ class Outer2 {
 //      myEnclosingOuter2 = Outer2.this;
     }
 
-    void doStuff(/*@NotNull */Inner2 this) {
+    void doStuff(@NotNull Inner2 this) {
 //      Outer2.this = null;
       System.out.println(Outer2.this);
     }
