@@ -568,11 +568,17 @@ C) Hello!, P-si: x is 0, C-si: y is 300, P-i: y is 101, P-c: y is 401, C-i x: is
 D) , P-si: x is 0, C-si: y is 300Hello!, P-i: y is 101, P-c: y is 401, C-i x: is 200 Goodbye!
 E) Hello!, P-si: x is 99, C-si: y is 300, P-i: y is 101, P-c: y is 100Goodbye!
 
+Q) Given:
+    record Customer(String name, int credit) {}
+and:
+    var result = Stream.of(new Customer("Fred", 100))
+        .collect(Collectors.groupingBy(c -> c.name(),
+            Collectors.counting()));
 
-
-
-
-
-
-
+What is the type of result?
+A) List<Customer>
+B) Map<Customer, Integer>
+C) Stream<Customer>
+D) Map<String, Integer>
+E) Map<String, Long>
 
